@@ -24,6 +24,10 @@
 .container {
     display: flex;
     gap: 20px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.464);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.462);
 }
 .box {
     width: 100px;
@@ -31,14 +35,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-width: 1px;
+    border-width: 0px;
     border-color: black;
     border-style: solid;
-    border-radius: 30px;
+    border-radius: 100px;
     background-color: rgba(255, 255, 255);
     transition: 0.1s;
     font-size:40px;
     text-shadow: 2px 4px transparent;
+    box-shadow: 0 0 10px black;
 }
 .box.active {
     background-color: rgb(241, 241, 241);
@@ -47,11 +52,21 @@
     border-radius: 100px;
     color: pink;
 }
+.install a {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: pink;
+    text-shadow: 0 0 3px white;
+}
     </style>
 
 
     </head>
     <body>
+        <div class="install">
+            <a href="https://raw.githubusercontent.com/n-km/osi_live_skin-by-komboldi-/refs/heads/main/index.html" target="_blank">Download (RAW File)</a>
+        </div>
         <div class="container">
             <div id="box-y" class="box">Y</div>
             <div id="box-x" class="box">X</div>
