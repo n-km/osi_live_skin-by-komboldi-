@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>osu_live_skin by komboldi</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+.container {
+    display: flex;
+    gap: 20px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255);
+    transition: box-shadow 0.15s, box-radius 0.1s;
+}
+.box.active {
+    box-shadow: 3px 9px pink;
+    border-radius: 100px;
+}
+    </style>
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="box-y" class="box">Y</div>
+            <div id="box-x" class="box">X</div>
+        </div>
+        <script>
+              // Get references to the boxes
+        const boxY = document.getElementById('box-y');
+        const boxX = document.getElementById('box-x');
+
+        // Function to add the active state
+        function addActiveState(box) {
+            box.classList.add('active');
+        }
+
+        // Function to remove the active state
+        function removeActiveState(box) {
+            box.classList.remove('active');
+        }
+
+        // Event listeners for keydown and keyup
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'y' || event.key === 'Y') {
+                addActiveState(boxY);
+            } else if (event.key === 'x' || event.key === 'X') {
+                addActiveState(boxX);
+            }
+        });
+
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'y' || event.key === 'Y') {
+                removeActiveState(boxY);
+            } else if (event.key === 'x' || event.key === 'X') {
+                removeActiveState(boxX);
+            }
+        });
+
+        // Optional: Notification to indicate the app is active
+        console.log('Key detection active! Open and focus the browser window.');
+        </script>
+    </body>
+</html>
